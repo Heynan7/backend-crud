@@ -9,10 +9,8 @@ const cors = require('cors');
 
 dotenv.config();
 // cargamos configuracion en archivo .env
-app.use(cors({
-    origin: 'http://52.15.228.215',
-    credentials: true // si necesitas enviar cookies
-}));
+
+app.use(cors());
 
 const router = require('./services/crud')
 
