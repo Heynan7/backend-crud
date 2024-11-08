@@ -1,0 +1,112 @@
+/*       
+--
+--
+--	Consultas para los empleados
+--
+--
+*/
+
+1. Obtener todos los empleados
+Método: GET
+URL: http://localhost:8800/apiv2/empleado		--FUNCIONA--
+
+
+2. Obtener un empleado por ID
+Método: GET
+URL: http://localhost:8800/apiv2/empleado/:numero
+http://localhost:8800/apiv2/empleado/44			--NO FUNCIONA--
+
+3. Insertar un nuevo empleado
+Método: POST
+URL: http://localhost:8800/apiv2/empleado		--FUNCIONA--
+codigo para el Json:
+
+{
+    "nombres": "CR",
+	"apellidos": "ronaldo",
+	"telefono": "37780890",
+	"direccion": "Barrio Nuevo, Salcajá",
+    "salario_base": 7800.90,
+    "idsucursal": 30
+}
+
+4. Actualizar un empleado
+Método: PUT
+URL: http://localhost:8800/apiv2/empleado/:numero
+http://localhost:8800/apiv2/empleado/49			--FUNCIONA--
+
+{
+    "nombres": "Belen",
+	"apellidos": "Rodas",
+	"telefono": "00112233",
+	"direccion": "Barrio El Carmen, Salcajá",
+    "salario_base": 14500.90,
+    "idsucursal": 30
+}
+
+
+5. Borrar un empleado
+Método: DELETE						--FUNCIONA--
+URL: http://localhost:8800/apiv2/empleado/:numero
+http://localhost:8800/apiv2/empleado/45
+
+
+6. Calcular salario total		--Funciona--
+Método: POST
+URL: http://localhost:8800/apiv2/empleado/salario/:id
+http://localhost:8800/apiv2/empleado/salario/38
+
+{
+    "bonos": 1200,
+    "descuentos": 400
+}
+
+
+7. Contar total de empleados			--FUNCIONA--
+Método: GET
+URL: http://localhost:8800/apiv2/empleado/conteo
+
+		
+8. Obtener empleados con nombre de sucursal		--FUNCIONA--
+Método: GET
+URL: http://localhost:8800/apiv2/empleado/empleadosucursal
+
+
+/*       
+--
+--
+--	Consultas para los Surusales
+--
+--
+*/
+
+
+1. Obtener todas las sucursales			--FUNCIONA--
+Método: GET
+URL: http://localhost:8800/apiv2/sucursal
+
+2. Insertar una nueva sucursal			--FUNCIONA--
+Método: POST
+URL: http://localhost:8800/apiv2/sucursal
+
+{
+    "nombre": "Sucursal Centro",
+    "direccion": "Avenida Central 123",
+    "telefono": "12345678"
+    
+}
+
+3. Actualizar una sucursal			--FUNCIONA--
+Método: PUT
+URL: http://localhost:8800/apiv2/sucursal/:idsucursal
+
+{
+    "nombre": "Sucursal Actualizada",
+    "direccion": "Nueva Dirección 456",
+    "telefono": "87654321"
+
+}
+
+4. Eliminar una sucursal		--FUNCIONA--
+Método: DELETE
+URL: http://localhost:3000/apiv2/sucursal/:idsucursal
